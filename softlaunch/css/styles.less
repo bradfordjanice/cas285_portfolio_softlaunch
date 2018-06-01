@@ -1,0 +1,396 @@
+/*
+File Name: styles.less
+Date: 04/18/18
+Programmer: Janice Bradford
+Project: jsb Animation Studios Portfolio
+*/ 
+
+@import "mixins.less"; 
+
+/* use to outline blocks for styling and debugging
+* { outline: 1px solid red !important } */
+
+/* STYLES */
+
+/* extra small, phones < 768px*/
+
+body { 
+	#project_mixins > .common_properties(@bg_color, @text_color, @default_font_family, @m_font_size, @body_margin, @body_padding, @line_ht);
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+	font-family: @hdr_font_family; 
+	color: @hdr_color; 
+}
+
+h1 {
+	font-size: @h1_font_size; 
+}
+
+h2 {
+	font-size: @h2_font_size;
+}
+
+h3 {
+	font-size: @h3_font_size;
+}
+
+p,
+li {
+	font-family: @default_font_family; 
+	color: @text_color;  
+	font-size: @m_font_size;
+} 
+
+.busName {
+    color: #0e004a;
+    font-size: 1.2em;
+} 
+
+img {
+	max-width: 100%; 
+	height: auto;
+} 
+
+.container {
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+}
+
+/* HEADER */
+
+.header {
+	display: grid;
+	grid-template-columns: 25% 1fr;
+	grid-gap: 15px;
+	background-color: @bg_color;
+	//text-align: center; 
+	padding: 10px; 
+	overflow: hidden; 
+}
+
+.logo {
+	grid-column-start: 1;
+	width: 75px;
+	height: 75px;
+	//max-width: 100px;
+	//height: auto;
+}
+
+.nameimg {
+	grid-column-start: 2;
+	text-align: center; 
+}
+
+/* CONTENT */
+
+ul {
+    line-height: 1.75em;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.listStyle {
+    list-style-type: square;
+} 
+
+.content {
+	display: grid;
+	grid-template-columns: 1fr; 
+	grid-gap: 10px; 
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.content-block { 
+	//border: 1px solid @text_color;
+	//background-color: aliceblue; 
+}
+	
+.placeholder {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
+	//width: 50%;
+	//height: auto; 
+	align-content: center;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+	grid-row-start: 2;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: aliceblue;
+}
+
+.reference { 
+	font-size: @copyright_font_size; 
+	line-height: 1.1em; 
+	//text-align: center;
+	padding-left: 15px; 
+}
+
+/* PORTFOLIO PAGE CONTENT */
+
+.content-portfolio {
+	//display: grid; 
+	//grid-template-columns: 1fr;
+	//grid-gap: 10px;
+	padding-left: 10px;
+	padding-right: 10px; 
+}
+
+.main-content-portfolio { 
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.main-content-portfolio h1 { 
+	text-align: center; 
+}
+
+.screenshot {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+ 
+.button {
+    background-color: #171048;
+    border: none;
+    color: white;
+		width: 15em;
+		margin: 1em 3em 1em 3em;
+    padding: 10px 13px; 
+		font-size: 16px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; 
+    cursor: pointer;
+		-webkit-transition-duration: 0.4s; /* Safari */ 
+    transition-duration: 0.4s; 
+} 
+
+.button:hover { 
+  opacity: .8;
+}
+
+.button:active { 
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+	opacity: 1;
+}
+
+.main-content-portfolio .button {
+	text-align: center; 
+}
+ 
+/* OVERLAY */
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay-content {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+} 
+
+/* FOOTER */
+
+.copyright {
+	font-size: @copyright_font_size; 
+	line-height: 1.1em; 
+	text-align: center;
+}
+
+.copyright a:link {
+	text-decoration: none;
+	color: @text_color; 
+}
+
+.copyright a:hover {
+	text-decoration: underline;
+}
+
+.contact-icon {
+	font-size: 1.5em;
+	color: @dk_blue; 
+	text-align: center; 
+}
+
+/* small devices, tablets 768px and up */
+
+@media only screen and (min-width: @screen_sm_min) {
+			
+	.content {
+		display: grid;
+		grid-template-columns: 20% 1fr;
+		grid-gap: 15px;
+		padding-left: 15px;
+		padding-right: 15px; 
+	} 
+	
+	.sidebar {
+		grid-row-start: 1;
+	}
+	
+	.content-portfolio {
+		//display: grid;
+		//grid-template-columns: 1fr 1fr 1fr;
+		//grid-gap: 15px;
+		padding-left: 15px;
+		padding-right: 15px; 
+	} 
+	
+	.main-content-portfolio {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 15px;
+	}
+	
+	p,
+	li {
+		font-size: @t_font_size;
+	}
+	
+	h3.address {
+		font-size: 1.25em;
+	}
+	
+	p.address { 
+		font-size: .8em;
+	}
+	 	
+	.logo {
+		width: 100px;
+		height: 100px;
+	}
+	
+	/* OVERLAY */
+	
+	#overlay-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 15px;
+	}
+	
+}
+
+/* medium devices, desktops 992px and up */
+
+@media only screen and (min-width: @screen_md_min) {
+	
+	.content {
+		display: grid;
+		grid-template-columns: 20% 1fr; 
+		grid-gap: 30px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	.content-portfolio {
+		//display: grid;
+		//grid-template-columns: 1fr 1fr 1fr;
+		//grid-gap: 30px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	.main-content-portfolio {
+		display: grid;
+		grid-template-columns: 1fr 1fr; 
+		grid-gap: 30px;
+	}
+	
+	p,
+	li { 
+		font-size: @d_font_size; 
+	}
+	
+	h3.address {
+		font-size: @h3_font_size;
+	}
+	
+	p.address { 
+		font-size: @m_font_size; 
+	}
+	
+	#overlay-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 30px;
+	}
+
+}
+
+/* large devices, large desktops 1200px and up */
+
+@media only screen and (min-width: @screen_lg_min) {
+	
+	.content {
+		display: grid;
+		grid-template-columns: 25% 1fr; 
+		grid-gap: 30px;
+		padding-left: 50px;
+		padding-right: 50px; 
+	}
+	
+	.content-portfolio {
+		//display: grid;
+		//grid-template-columns: 1fr 1fr 1fr;
+		//grid-gap: 30px; 
+		padding-left: 50px; 
+		padding-right: 50px;
+	}
+	
+	.main-content-portfolio {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 50px;
+	}
+	
+	p.address { 
+		font-size: @d_font_size;
+	}
+	
+	.logo {
+		//width: 100px;
+		//height: 100px; 
+	}
+	
+	#overlay-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 50px; 
+	}
+	
+}
